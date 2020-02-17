@@ -1,30 +1,30 @@
-div.content
+main
 	div.main-article
 		div.main-image-wrapper
 			div.main-image-annotation
-			p Good Inc. image caption to go here
+				p Good Inc. image caption to go here
 		div.main-article-wrapper
 			h2 Housework can't kill you, but why take a chance?
 			p Some text is here. You can read some about housework. By the way, it can kill you one of these fine days...
 	div.secondary-article-wrapper
-		div.first-secondary-article
-			div.secondary-article-image
+		div.secondary-article
+			div.first-secondary-article-image
 				div.right-angle-icon
 			div.secondary-article-annotation
 				div.secondary-article-text
 					h2 Some pictures!
 					p I don't know what is it, really... But maybe you know?
 					p There is secondary article.
-		div.second-secondary-article
-			div.secondary-article-image
+		div.secondary-article
+			div.second-secondary-article-image
 				div.right-angle-icon
 			div.secondary-article-annotation
 				div.secondary-article-text
 					h2 Some pictures!
 					p I don't know what is it, really... But maybe you know?
 					p There is secondary article.
-		div.third-secondary-article
-			div.secondary-article-image
+		div.secondary-article
+			div.third-secondary-article-image
 				div.right-angle-icon
 			div.secondary-article-annotation
 				div.secondary-article-text
@@ -35,21 +35,16 @@ div.content
 		div.stories
 			div.story
 				h2 My first story here. Can we talk about pinniped?
-				p.info-string 11.11.2018 <span>|</span> 32 comments <span>|</span> 120 votes
+				p.story-info-string 11.11.2018 <span>|</span> 2 comments <span>|</span> 0 votes
 				p Pinniped is a very cute and lovely animals.
 				p I just jealous of them, because they can eat, swim and sleep all day.
 				div.full-story
 					p Pinnipeds, commonly known as seals, are a widely distributed and diverse clade of carnivorous, fin-footed, semiaquatic marine mammals. They comprise the extant families Odobenidae (whose only living member is the walrus), Otariidae (the eared seals: sea lions and fur seals), and Phocidae (the earless seals, or true seals). There are 33 extant species of pinnipeds, and more than 50 extinct species have been described from fossils. While seals were historically thought to have descended from two ancestral lines, molecular evidence supports them as a monophyletic lineage (descended from one ancestral line). Pinnipeds belong to the order Carnivora and their closest living relatives are bears and musteloids (weasels, raccoons, skunks, and red pandas), having diverged about 50 million years ago.
-				button.post-comment
-
-			div.story
-				h2 My first story here. Can we talk about pinniped?
-				p.info-string 11.11.2018 <span>|</span> 32 comments <span>|</span> 120 votes
-				p Pinniped is a very cute and lovely animals.
-				p I just jealous of them, because they can eat, swim and sleep all day.
-				div.full-story
-					p Pinnipeds, commonly known as seals, are a widely distributed and diverse clade of carnivorous, fin-footed, semiaquatic marine mammals. They comprise the extant families Odobenidae (whose only living member is the walrus), Otariidae (the eared seals: sea lions and fur seals), and Phocidae (the earless seals, or true seals). There are 33 extant species of pinnipeds, and more than 50 extinct species have been described from fossils. While seals were historically thought to have descended from two ancestral lines, molecular evidence supports them as a monophyletic lineage (descended from one ancestral line). Pinnipeds belong to the order Carnivora and their closest living relatives are bears and musteloids (weasels, raccoons, skunks, and red pandas), having diverged about 50 million years ago.
-				button.post-comment
+				span.read-comments-button Read comments
+				span.add-comment-button Add comment
+			div.toggle-stories
+				p.toggle-stories-text Read more
+				i(class="fa fa-plus-circle fa-3x" aria-hidden="true")
 					
 		div.sidebar
 			div.side-feature
