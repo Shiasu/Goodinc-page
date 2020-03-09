@@ -16,16 +16,16 @@ $(document).ready(function(){
 
 	//Comment showing/hiding imitation on JS
 	$(".show-comments-button").click(function() {
-		let commentsDisplay = $(".story-comments").css("display");
+		let commentsDisplay = $(this).parent().next().css("display");
 		if (commentsDisplay != "none")  {
-			$(".story-comments").css("display", "none");
+			$(this).parent().next().css("display", "none");
 			$(this).html("Show comments");
 		} else {
-			$(".story-comments").css("display", "block");
+			$(this).parent().next().css("display", "block");
 			$(this).html("Hide comments");
 
 			//Making random (name, text) and not random(date) data to comment
-			$(".comment-date").html(Date('2020-02-22T03:24:00'));
+			$(this).parent().next().find(".comment-date").html(Date('2020-02-22T03:24:00'));
 
 			let names = ["Nick", "Paul", "John", "Mila", "Sofia", "Elena", "George", "Denise", "Kevin", "Ron"];
 			let secondNames = ["Rabbit", "Bear", "Seal", "Tiger", "Dog", "Cat", "Fox", "Deer", "Orca", "Raven"];
@@ -34,8 +34,8 @@ $(document).ready(function(){
 			}
 			let commentatorName = names[getRandom()];
 			let commentatorSecondName = secondNames[getRandom()];
-			$(".commentator-name").html(`${commentatorName} ${commentatorSecondName}`);
-			$(".comment-text").html(`Hello! My name is ${commentatorName}. My friend ${names[getRandom()]} show me this story today. It was exciting, because my ${secondNames[getRandom()]} had started speaking English arter that.`);
+			$(this).parent().next().find(".commentator-name").html(`${commentatorName} ${commentatorSecondName}`);
+			$(this).parent().next().find(".comment-text").html(`Hello! My name is ${commentatorName}. My friend ${names[getRandom()]} show me this story today. It was exciting, because my ${secondNames[getRandom()]} had started speaking English arter that.`);
 		}
 	})
 });
