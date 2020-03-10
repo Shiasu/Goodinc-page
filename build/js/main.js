@@ -37,5 +37,21 @@ $(document).ready(function(){
 			$(this).parent().next().find(".commentator-name").html(`${commentatorName} ${commentatorSecondName}`);
 			$(this).parent().next().find(".comment-text").html(`Hello! My name is ${commentatorName}. My friend ${names[getRandom()]} show me this story today. It was exciting, because my ${secondNames[getRandom()]} had started speaking English arter that.`);
 		}
-	})
+	});
+
+	//Toggle/show more stories
+	$(".toggle-stories").click(function() {
+		let longtimeStoriesDisplay = $(".longtime-stories").css("display");
+		if (longtimeStoriesDisplay != "none") {
+			$(".longtime-stories").css("display", "none");
+			$(".toggle-stories-text").html("Show more")
+		} else {
+			$(".longtime-stories").css("display", "block");
+			$(".toggle-stories-text").html("Show less");
+		}
+	});
+
+	//making statistics under sidebar
+	$(".story-articles").find("span").html(Array.from($(".story")).length);
+	$(".comments").find("span").html(Array.from($(".comment")).length);
 });

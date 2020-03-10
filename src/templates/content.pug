@@ -33,7 +33,7 @@ main
 					p There is secondary article.
 	div.stories-and-sidebar
 		div.stories
-			div.story
+			div.story.recent-stories
 				h2 My first story here. Can we talk about pinniped?
 				p.story-info-string 15.01.2020 <span>|</span> 1 comments
 				p Pinniped is a very cute and lovely animals.
@@ -49,7 +49,7 @@ main
 					p.comment-date
 					p.comment-text
 
-			div.story
+			div.story.recent-stories
 				h2 What do you know about Mars? I can tell you something...
 				p.story-info-string 11.11.2019 <span>|</span> 1 comments
 				p Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries a name of the Roman god of war and is often referred to as the 'Red Planet'.
@@ -66,7 +66,7 @@ main
 					p.comment-date
 					p.comment-text
 
-			div.story
+			div.story.recent-stories
 				h2 I love mountains!
 				p.story-info-string 10.11.2019 <span>|</span> 1 comments
 				p A mountain is a large landform that rises above the surrounding land in a limited area, usually in the form of a peak. A mountain is generally steeper than a hill. Mountains are formed through tectonic forces or volcanism.
@@ -81,13 +81,41 @@ main
 					p.comment-date
 					p.comment-text
 
+			div.story.longtime-stories
+				h2 Asia!
+				p.story-info-string 01.11.2019 <span>|</span> 1 comments
+				p Asia (/ˈeɪʒə, ˈeɪʃə/) is Earth's largest and most populous continent, located primarily in the Eastern and Northern Hemispheres. It shares the continental landmass of Eurasia with the continent of Europe and the continental landmass of Afro-Eurasia with both Europe and Africa. Asia covers an area of 44,579,000 square kilometres (17,212,000 sq mi), about 30% of Earth's total land area and 8.7% of the Earth's total surface area.
+				div.full-story
+					p The continent, which has long been home to the majority of the human population, was the site of many of the first civilizations. Asia is notable for not only its overall large size and population, but also dense and large settlements, as well as vast barely populated regions. Its 4.5 billion people (as of June 2019) constitute roughly 60% of the world's population, more than all other continents combined.
+					p In general terms, Asia is bounded on the east by the Pacific Ocean, on the south by the Indian Ocean, and on the north by the Arctic Ocean. The border of Asia with Europe is a historical and cultural construct, as there is no clear physical and geographical separation between them. It is somewhat arbitrary and has moved since its first conception in classical antiquity. The division of Eurasia into two continents reflects East–West cultural, linguistic, and ethnic differences, some of which vary on a spectrum rather than with a sharp dividing line. The most commonly accepted boundaries place Asia to the east of the Suez Canal separating it from Africa; and to the east of the Turkish Straits, the Ural Mountains and Ural River, and to the south of the Caucasus Mountains and the Caspian and Black Seas, separating it from Europe.
+					p China and India alternated in being the largest economies in the world from 1 to 1800 CE. China was a major economic power and attracted many to the east, and for many the legendary wealth and prosperity of the ancient culture of India personified Asia, attracting European commerce, exploration and colonialism. The accidental discovery of a trans-Atlantic route from Europe to America by Columbus while in search for a route to India demonstrates this deep fascination. The Silk Road became the main east–west trading route in the Asian hinterlands while the Straits of Malacca stood as a major sea route. Asia has exhibited economic dynamism (particularly East Asia) as well as robust population growth during the 20th century, but overall population growth has since fallen. Asia was the birthplace of most of the world's mainstream religions including Hinduism, Zoroastrianism, Judaism, Jainism, Buddhism, Confucianism, Taoism, Christianity, Islam, Sikhism, as well as many other religions.
+					p Given its size and diversity, the concept of Asia—a name dating back to classical antiquity—may actually have more to do with human geography than physical geography.[citation needed] Asia varies greatly across and within its regions with regard to ethnic groups, cultures, environments, economics, historical ties and government systems. It also has a mix of many different climates ranging from the equatorial south via the hot desert in the Middle East, temperate areas in the east and the continental centre to vast subarctic and polar areas in Siberia.
+				span.show-comments-button Show comments
+				span.add-comment-button Add comment
+			<!-- Comment showing imitation on JS -->
+			div.story-comments
+				div.comment
+					h3.commentator Comment by <span class="commentator-name"></span>
+					p.comment-date
+					p.comment-text
+
+			div.story.longtime-stories
+				h2 What about world population?
+				p.story-info-string 20.10.2019 <span>|</span> 0 comments
+				p In demographics, the world population is the total number of humans currently living, and was estimated to have reached 7.7 billion people as of April 2019. It took over 200,000 years of human history for the world's population to reach 1 billion, and only 200 years more to reach 7 billion.
+				div.full-story
+					p The world population has experienced continuous growth following the Great Famine of 1315–1317 and the end of the Black Death in 1350, when it was near 370 million. The highest global population growth rates, with increases of over 1.8% per year, occurred between 1955 and 1975—peaking to 2.1% between 1965 and 1970. The growth rate declined to 1.2% between 2010 and 2015 and is projected to decline further in the course of the 21st century.[6] However, the global population is still increasing and is projected to reach about 10 billion in 2050 and more than 11 billion in 2100.
+					p Total annual births were highest in the late 1980s at about 139 million, and as of 2011 were expected to remain essentially constant at a level of 135 million, while deaths numbered 56 million per year and were expected to increase to 80 million per year by 2040. The median age of the world's population was estimated to be 30.4 years in 2018. In mid-2019, the United Nations estimated that the world population had reached 7,713,468,000.
+				span.show-comments-button Show comments
+				span.add-comment-button Add comment
+
 			div.toggle-stories
-				p.toggle-stories-text Read more
+				p.toggle-stories-text Show more
 				i(class="fa fa-plus-circle fa-3x" aria-hidden="true")
 					
 		div.sidebar
 			div.side-feature
-				h2 About me
+				h2 About us
 				p Some text Some text Some text Some text Some text Some text Some secondary-article-text
 			div.side-feature
 				h2 Contacts
@@ -101,10 +129,10 @@ main
 
 			div.statistics
 				div.active-readers
-					p <span></span> <i class="fa fa-user-circle" aria-hidden="true"></i> Active readers
+					p <span>1</span> <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i> Active readers
 				div.story-articles
-					p <span></span> <i class="fa fa-pencil" aria-hidden="true"></i> Story articles
+					p <span></span> <i class="fa fa-pencil fa-2x" aria-hidden="true"></i> Story articles
 				div.comments
-					p <span></span> <i class="fa fa-comments" aria-hidden="true"></i> Comments
-				div.Goodinc
-					p <span></span> <i class="fa fa-comments" aria-hidden="true"></i> Goodinc
+					p <span></span> <i class="fa fa-comments fa-2x" aria-hidden="true"></i> Comments
+				div.goodinc
+					p <span>1</span> <i>g</i> Goodinc

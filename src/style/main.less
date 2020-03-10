@@ -225,6 +225,7 @@ main {
 	width: 60%;
 	margin: 0 auto;
 	min-width: 835px;
+	padding-bottom: 70px;
 	display: flex;
 	display: -webkit-box;
 	display: -moz-box;
@@ -291,6 +292,10 @@ main {
 		font-size: 15px;
 		font-family: "Nexa-regular";
 	}
+}
+
+.longtime-stories {
+	display: none;
 }
 
 .show-comments-button {
@@ -395,7 +400,6 @@ main {
 .sidebar {
 	position: relative;
 	width: 32%;
-	height: 800px;
 }
 
 .side-feature {
@@ -443,6 +447,31 @@ main {
 	-moz-box-shadow:    3px 3px 10px 0px rgba(50, 50, 50, 0.95);
 	box-shadow:         3px 3px 10px 0px rgba(50, 50, 50, 0.95);
 	cursor: pointer;
+}
+
+
+.statistics div {
+	margin: 15px 0 10px 10px;
+	font-size: 1.3em;
+	color: #9d9d9d;
+	font-family: "Nexa-bold";
+
+	p {
+		height: 60px;
+	}
+
+	i {
+		color: #474747;
+	}
+
+	span {
+		color: #474747;
+		margin-right: 15px;
+	}
+}
+
+.goodinc i {
+	font-size: 2em;
 }
 
 @import "./partials/footer.less";
