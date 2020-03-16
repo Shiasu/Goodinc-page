@@ -1,4 +1,11 @@
 $(document).ready(function(){
+	//Making statistics under sidebar
+	function countComments() {
+		$(".comments-counter").find("span").html(Array.from($(".comment")).length);
+	}
+	countComments();
+	$(".story-articles-counter").find("span").html(Array.from($(".story")).length);
+
 	//toggle(show/hide) full text of story
 	$(".story").click(function(event) {
 		let target = event.target;
@@ -25,7 +32,7 @@ $(document).ready(function(){
 			$(this).html("Hide comments");
 
 			//Making random (name, text) and not random(date) data to "server" comment
-			$(this).parent().next().find(".serverside-comment-date").html(Date('2020-02-22T03:24:00'));
+			$(this).parent().next().find(".serverside-comment-date").html(new Date('2020-02-22T03:24:00'));
 
 			function getRandom() {
 				return Math.floor(Math.random() * 10);
@@ -50,10 +57,12 @@ $(document).ready(function(){
 				let commentatorName = $(this).parent().find(".comment-adding-name").val();
 				let commentText = $(this).parent().find(".comment-adding-text").val();
 				if ($(this).parent(".comment-input").find(".comment-adding-text").val() != "") {
+					if (commentatorName == "") {commentatorName = "Anonymous"}
 					$(this).parents(".story").next(".story-comments").prepend(`<div class='comment'><h3 class='commentator'>Comment by <span class='commentator-name'>${commentatorName}</span></h3><p class='comment-date'>${Date()}</p><p class='comment-text'>${commentText}</p></div>`);
 					$(this).parents(".story").find(".add-comment-form-button").html("Add comment");
 					$(this).parents(".story").find(".comment-input").remove();
 				}
+				countComments();
 			});
 		} else {
 			$(this).parent().find(".comment-input").remove();
@@ -72,8 +81,4 @@ $(document).ready(function(){
 			$(".toggle-stories-text").html("Show less");
 		}
 	});
-
-	//Making statistics under sidebar
-	$(".story-articles").find("span").html(Array.from($(".story")).length);
-	$(".comments").find("span").html(Array.from($(".comment")).length);
 });
