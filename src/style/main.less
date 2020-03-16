@@ -29,7 +29,7 @@ main {
 	background-size: cover;
 	width: 68%;
 	height: 100%;
-	border-right: 9px #f26c4f solid;
+	border-right: 9px @fox-orange-color solid;
 }
 
 .main-image-annotation {
@@ -274,7 +274,7 @@ main {
 		position: relative;
 		text-align: justify;
 		font-style: italic;
-		color: #cbcbcb;
+		color: @light-grey-color;
 		font-size: 13px;
 
 		span {
@@ -303,11 +303,11 @@ main {
 	bottom: 5px;
 	left: 5px;
 	font-style: italic;
-	color: #cbcbcb;
+	color: @light-grey-color;
 }
 
 .show-comments-button:hover {
-	color: #f26c4f;
+	color: @fox-orange-color;
 }
 
 .add-comment-form-button {
@@ -315,11 +315,11 @@ main {
 	bottom: 5px;
 	right: 5px;
 	font-style: italic;
-	color: #cbcbcb;
+	color: @light-grey-color;
 }
 
 .add-comment-form-button:hover {
-	color: #f26c4f;
+	color: @fox-orange-color;
 }
 
 .comment-input {
@@ -349,6 +349,15 @@ main {
     width: 115px;
     height: 25px;
     margin-left: 5%;
+    background-color: @dark-grey-color;
+    color: #d5d5d5;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-comment-button:hover {
+	background-color: @fox-orange-color;
+	color: white;
 }
 
 .full-story {
@@ -357,7 +366,7 @@ main {
 }
 
 .story:hover {
-	border-left: 2px solid #f26c4f;
+	border-left: 2px solid @fox-orange-color;
 	-webkit-box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.95);
 	-moz-box-shadow:    3px 3px 10px 0px rgba(50, 50, 50, 0.95);
 	box-shadow:         3px 3px 10px 0px rgba(50, 50, 50, 0.95);
@@ -397,7 +406,7 @@ main {
 .comment-date {
 	margin: 0 5%;
 	font-style: italic;
-	color: #cbcbcb;
+	color: @light-grey-color;
 	font-size: 13px;
 }
 
@@ -414,12 +423,12 @@ main {
 	text-align: center;
 	width: max-content;
     margin: 0 auto;
-    color: #ababab;
+    color: @light-grey-color;
 }
 
 .toggle-stories:hover {
 	cursor: pointer;
-	color: #f26c4f;
+	color: @fox-orange-color;
 }
 
 .toggle-stories-text {
@@ -471,7 +480,7 @@ main {
 }
 
 .side-feature:hover {
-	border-left: 1px solid #f26c4f;
+	border-left: 1px solid @fox-orange-color;
 	-webkit-box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.95);
 	-moz-box-shadow:    3px 3px 10px 0px rgba(50, 50, 50, 0.95);
 	box-shadow:         3px 3px 10px 0px rgba(50, 50, 50, 0.95);

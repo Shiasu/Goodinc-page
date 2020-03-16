@@ -24,18 +24,19 @@ $(document).ready(function(){
 			$(this).parent().next(".story-comments").css("display", "block");
 			$(this).html("Hide comments");
 
-			//Making random (name, text) and not random(date) data to comment
-			$(this).parent().next().find(".comment-date").html(Date('2020-02-22T03:24:00'));
+			//Making random (name, text) and not random(date) data to "server" comment
+			$(this).parent().next().find(".serverside-comment-date").html(Date('2020-02-22T03:24:00'));
 
-			let names = ["Nick", "Paul", "John", "Mila", "Sofia", "Elena", "George", "Denise", "Kevin", "Ron"];
-			let secondNames = ["Rabbit", "Bear", "Seal", "Tiger", "Dog", "Cat", "Fox", "Deer", "Orca", "Raven"];
 			function getRandom() {
 				return Math.floor(Math.random() * 10);
 			}
+
+			let names = ["Nick", "Paul", "John", "Mila", "Sofia", "Elena", "George", "Denise", "Kevin", "Ron"];
+			let secondNames = ["Rabbit", "Bear", "Seal", "Tiger", "Dog", "Cat", "Fox", "Deer", "Orca", "Raven"];
 			let commentatorName = names[getRandom()];
 			let commentatorSecondName = secondNames[getRandom()];
-			$(this).parent().next().find(".commentator-name").html(`${commentatorName} ${commentatorSecondName}`);
-			$(this).parent().next().find(".comment-text").html(`Hello! My name is ${commentatorName}. My friend ${names[getRandom()]} show me this story today. It was exciting, because my ${secondNames[getRandom()]} had started speaking English arter that.`);
+			$(this).parent().next().find(".serverside-commentator-name").html(`${commentatorName} ${commentatorSecondName}`);
+			$(this).parent().next().find(".serverside-comment-text").html(`Hello! My name is ${commentatorName}. My friend ${names[getRandom()]} show me this story today. It was exciting, because my ${secondNames[getRandom()]} had started speaking English arter that.`);
 		}
 	});
 
@@ -44,16 +45,19 @@ $(document).ready(function(){
 		if ($(this).html() == "Add comment") {
 			$(this).parent().after().append("<div class='comment-input'><input class='comment-adding-name' type='text' placeholder='Enter your name'><textarea class='comment-adding-text' maxlength='150' placeholder='Comment text'></textarea><input class='submit-comment-button' type='submit' value='Send Comment'></div>");
 			$(this).html("Cancel");
+
+			$(".submit-comment-button").click(function() {
+				let commentatorName = $(this).parent().find(".comment-adding-name").val();
+				let commentText = $(this).parent().find(".comment-adding-text").val();
+				if ($(this).parent(".comment-input").find(".comment-adding-text").val() != "") {
+					$(this).parents(".story").next(".story-comments").prepend(`<div class='comment'><h3 class='commentator'>Comment by <span class='commentator-name'>${commentatorName}</span></h3><p class='comment-date'>${Date()}</p><p class='comment-text'>${commentText}</p></div>`);
+					$(this).parents(".story").find(".add-comment-form-button").html("Add comment");
+					$(this).parents(".story").find(".comment-input").remove();
+				}
+			});
 		} else {
 			$(this).parent().find(".comment-input").remove();
 			$(this).html("Add comment");
-		}
-	});
-
-	$(".submit-comment-button").click(function() {
-		console.log("text");
-		if ($(this).parent(".comment-input").find(".comment-adding-text").html()) {
-			$(this).parent(".full-story").siblings(".story-comments").before().append("<div class='comment'> <h3 class='commentator'Comment by></h3> <span class='commentator-name'></span> <p class='comment-date'></p><p class='comment-text'></p></div>");
 		}
 	});
 
@@ -69,7 +73,7 @@ $(document).ready(function(){
 		}
 	});
 
-	//making statistics under sidebar
+	//Making statistics under sidebar
 	$(".story-articles").find("span").html(Array.from($(".story")).length);
 	$(".comments").find("span").html(Array.from($(".comment")).length);
 });
