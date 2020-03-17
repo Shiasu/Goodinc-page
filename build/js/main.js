@@ -22,9 +22,8 @@ $(document).ready(function(){
 	});
 
 	//Comment showing/hiding imitation on JS
-	$(".show-comments-button").click(function() {
-		let commentsDisplay = $(this).parent().next().css("display");
-		if (commentsDisplay != "none")  {
+	function toggleComments(condition) {
+		if (condition)  {
 			$(this).parent().next(".story-comments").css("display", "none");
 			$(this).html("Show comments");
 		} else {
@@ -45,6 +44,10 @@ $(document).ready(function(){
 			$(this).parent().next().find(".serverside-commentator-name").html(`${commentatorName} ${commentatorSecondName}`);
 			$(this).parent().next().find(".serverside-comment-text").html(`Hello! My name is ${commentatorName}. My friend ${names[getRandom()]} show me this story today. It was exciting, because my ${secondNames[getRandom()]} had started speaking English arter that.`);
 		}
+	}
+
+	$(".show-comments-button").click(function() {
+		toggleComments.call(this, ($(this).parent().next().css("display") != "none"));
 	});
 
 	//Comment adding imitation on JS
@@ -54,6 +57,7 @@ $(document).ready(function(){
 			$(this).html("Cancel");
 
 			$(".submit-comment-button").click(function() {
+				toggleComments.call($(this).parents(".story").find(".show-comments-button"), false);
 				let commentatorName = $(this).parent().find(".comment-adding-name").val();
 				let commentText = $(this).parent().find(".comment-adding-text").val();
 				if ($(this).parent(".comment-input").find(".comment-adding-text").val() != "") {
@@ -63,12 +67,21 @@ $(document).ready(function(){
 					$(this).parents(".story").find(".comment-input").remove();
 				}
 				countComments();
+
+				//Removing comments imitation
+				$(".remove-comment-button").click(function() {
+					console.log($(this).parents(".comment"));
+					$(this).parents(".comment").remove();
+					countComments();
+				});
 			});
 		} else {
 			$(this).parent().find(".comment-input").remove();
 			$(this).html("Add comment");
 		}
 	});
+
+
 
 	//Toggle/show more stories
 	$(".toggle-stories").click(function() {
