@@ -92,8 +92,7 @@ $(document).ready(function(){
 
 				//Removing comments imitation
 				$(".remove-comment-button").click(function() {
-					let storyCommentsCounter = $(this).parents(".story-comments").prev(".story").find(".story-comments-counter").html();
-					storyCommentsCounter = parseInt(storyCommentsCounter) - 1;
+					$(this).parents(".story-comments").prev(".story").find(".story-comments-counter").html(parseInt($(this).parents(".story-comments").prev(".story").find(".story-comments-counter").html()) - 1);
 					$(this).parents(".comment").remove();
 					countComments($(".comments-counter"), "span", $(".comment"));
 				});
