@@ -36,16 +36,18 @@ header
 
 			div.menu-item
 				a(href="#") Contact
-		div.dropdown
-			p.dropdown_qoutes &lt&gt
-			div.dropdown_items
-				p.text Select from dropdown
-				span |
+		div.dropdown-wrapper
+			div.dropdown-items
+				select.dropdown
+					option(value="zero_option") Select from dropdown
+					option(value="first_option") First option
+					option(value="second_option") Second option
+					option(value="third_option") Third option
 		div.quicklinks
 			p Quicklinks
 			i(class = "fa fa-map-marker" aria-hidden="true") 
 			span |
-	div.search-social_bar
+	div.search-social-bar
 		div.search-bar
 			div.search
 				input(type="text" placeholder="Search for something")

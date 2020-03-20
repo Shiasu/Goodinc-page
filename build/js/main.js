@@ -72,12 +72,12 @@ $(document).ready(function(){
 			$(this).html("Cancel");
 
 			$(".submit-comment-button").click(function() {
-				$(this).parents(".story").find(".story-comments-counter").html(parseInt($(this).parents(".story").find(".story-comments-counter").html()) + 1);
 				toggleComments.call($(this).parents(".story").find(".show-comments-button"), false);
 				let commentatorName = $(this).parent().find(".comment-adding-name").val();
 				let commentText = $(this).parent().find(".comment-adding-text").val();
 				if ($(this).parent(".comment-input").find(".comment-adding-text").val() != "") {
 					if (commentatorName == "") {commentatorName = "Anonymous"}
+					$(this).parents(".story").find(".story-comments-counter").html(parseInt($(this).parents(".story").find(".story-comments-counter").html()) + 1);
 					$(this).parents(".story")
 						.next(".story-comments")
 						.prepend(`<div class='comment'><h3 class='commentator'>Comment by <span class='commentator-name'>${commentatorName}</span></h3><p class='comment-date'>${Date()}</p><p class='comment-text'>${commentText}</p><button class='remove-comment-button' title='Remove comment'>X</button></div>`);
